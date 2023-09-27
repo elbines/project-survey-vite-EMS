@@ -1,67 +1,70 @@
 import { useState } from "react";
 import { Button } from "../Button/Button";
-import {Footer} from "../Footer/Footer"
+import { Footer } from "../Footer/Footer";
 import { Hero } from "../Hero/Hero";
 import { HowOften } from "../HowOften/HowOften";
 import { PrimaryReason } from "../PrimaryReason/PrimaryReason";
 import { Suggestions } from "../Suggestions/Suggestions";
 import { Summary } from "../Summary/Summary";
 
-import style from "./MultiStepForm.module.css"
-
+import style from "./MultiStepForm.module.css";
 
 export const MultiStepForm = () => {
-    const [formData,setFormData]=useState({
-        primaryReason:'',
-        howOften:'',
-        Suggestions:''
-    })
+  const [formData, setFormData] = useState({
+    primaryReason: "",
+    howOften: "",
+    Suggestions: "",
+  });
 
-    const updateFormData=(field,value)=>{
-        setFormData((previous)=>({...previous,[field]:value}))
-        console.log(formData)
-    }
-
-    const [currentStep,setCurrentStep]=useState(1)
-    const nextStep=()=>{
-        if(currentStep<3) setCurrentStep(c=>c+1)
-        console.log(currentStep)
-        }
-    const prevStep=()=>{
-        if(currentStep>1) setCurrentStep(c=>c-1)
-        console.log(currentStep)
-        }
-
-    return (<div>
-<Button/>
-<Button/>
-
-<Hero/>
-{currentStep === 1 && (
-        <PrimaryReason value={formData.primaryReason} updateFormData={updateFormData} />
-      )}
-{currentStep === 2 && (
-        <HowOften value={formData.howOften} updateFormData={updateFormData} />
-      )}
-{currentStep === 3 && (
-        <Suggestions value={formData.suggestions} updateFormData={updateFormData} />
-      )}
-{currentStep === 4 && (
-        <Summary  />
-      )}
-
-
-<Footer/>
-<button onClick={nextStep} className={style.btn}>Next</button>
-<button onClick={prevStep}>Previous</button>
-    </div>)
+  const updateFormData = (field, value) => {
+    setFormData((previous) => ({ ...previous, [field]: value }));
+    console.log(formData);
   };
 
+  const [currentStep, setCurrentStep] = useState(1);
+  const nextStep = () => {
+    if (currentStep < 3) setCurrentStep((c) => c + 1);
+    console.log(currentStep);
+  };
+  const prevStep = () => {
+    if (currentStep > 1) setCurrentStep((c) => c - 1);
+    console.log(currentStep);
+  };
 
+  return (
+    <div className={style.form_wrapper}>
+      <Button />
+      <Button />
+
+      <Hero />
+      <div className={style.form}>
+        <h1>Pala PetFoods Customer Insights</h1>
+
+        <div className={style.inner_form}>
+          {currentStep === 1 && (
+            <PrimaryReason value={formData.primaryReason} updateFormData={updateFormData} />
+          )}
+          {currentStep === 2 && (
+            <HowOften value={formData.howOften} updateFormData={updateFormData} />
+          )}
+          {currentStep === 3 && (
+            <Suggestions value={formData.suggestions} updateFormData={updateFormData} />
+          )}
+          {currentStep === 4 && <Summary />}
+        </div>
+      </div>
+
+      <Footer />
+      <button onClick={nextStep} className={style.btn}>
+        Next
+      </button>
+      <button onClick={prevStep}>Previous</button>
+    </div>
+  );
+};
 
 //   4. Thank you for sharing your feedback with us!
 // Your €15 Discount Code: PALA15
-
 
 //***************************************************/
 /*
