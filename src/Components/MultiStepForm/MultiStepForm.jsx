@@ -5,6 +5,9 @@ import { Hero } from "../Hero/Hero";
 import { HowOften } from "../HowOften/HowOften";
 import { PrimaryReason } from "../PrimaryReason/PrimaryReason";
 import { Suggestions } from "../Suggestions/Suggestions";
+import { Summary } from "../Summary/Summary";
+
+import style from "./MultiStepForm.module.css"
 
 
 export const MultiStepForm = () => {
@@ -43,10 +46,13 @@ export const MultiStepForm = () => {
 {currentStep === 3 && (
         <Suggestions value={formData.suggestions} updateFormData={updateFormData} />
       )}
+{currentStep === 4 && (
+        <Summary  />
+      )}
 
 
 <Footer/>
-<button onClick={nextStep}>Next</button>
+<button onClick={nextStep} className={style.btn}>Next</button>
 <button onClick={prevStep}>Previous</button>
     </div>)
   };
