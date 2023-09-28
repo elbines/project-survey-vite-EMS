@@ -1,0 +1,26 @@
+/* below style the .backgroundImage class in the Hero.module.css file */
+
+.heroImage {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+  }
+
+  /* .imageContainer {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  
+*/
+  
+  
+  
+
+
+

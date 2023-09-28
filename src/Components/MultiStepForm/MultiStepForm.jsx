@@ -32,7 +32,7 @@ export const MultiStepForm = () => {
     if (currentStep > 1) setCurrentStep((c) => c - 1);
     console.log(currentStep);
   };
-
+  
   return (
     <div className={style.form_wrapper}>
       <Button />
