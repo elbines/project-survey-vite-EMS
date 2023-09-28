@@ -54,8 +54,7 @@ export const PrimaryReason = ({ updateFormData, value }) => {
           <div>
             <input
               type="radio"
-              id="other"git add .
-              
+              id="other"
               name="primaryReason"
               value="other"
               onChange={firstQuestion}
