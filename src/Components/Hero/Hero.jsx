@@ -5,6 +5,7 @@ const Hero = ({ step }) => { // Destructure "step" from props
   const currentStage = step;
   console.log(currentStage);
 
+  
   let backgroundImage;
 
   if (step === 1) {
@@ -19,7 +20,7 @@ const Hero = ({ step }) => { // Destructure "step" from props
 
   return (
     <div className={style.imageContainer}>
-      <img src={backgroundImage} alt="dog" className={style.heroImage} />
+      {/* <img src={backgroundImage} alt="dog" className={style.heroImage} />  /*/}
     </div>
   );
 };

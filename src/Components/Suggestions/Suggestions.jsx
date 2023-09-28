@@ -5,7 +5,7 @@ export const Suggestions = ({ updateFormData }) => {
   
   return (
     <div>
-      <h2>What suggestions do you have to improve your shopping experience?</h2>
+      <h2>3. What suggestions do you have to improve your shopping experience?</h2>
       <div className={style.input_wrapper}>
         <textarea
           id="input"
