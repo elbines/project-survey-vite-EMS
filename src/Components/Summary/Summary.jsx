@@ -1,3 +1,4 @@
-export const Summary =()=>{
-    return <div>Summary</div>
-}
+export const Summary = ({ data }) => {
+  console.log(data);
+  return <div>Summary</div>;
+};
