@@ -37,8 +37,9 @@ export const MultiStepForm = () => {
     <div className={style.form_wrapper}>
       <Button />
       <Button />
-
-      <Hero />
+      {/*Mikael edited this to get hero to work*/}
+      <Hero step={currentStep} /> {/* Pass currentStep as a prop to Hero <Hero /> */}
+      
       <div className={style.form}>
         <h1>Pala PetFoods Customer Insights</h1>
 
