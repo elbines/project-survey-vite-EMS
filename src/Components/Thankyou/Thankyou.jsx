@@ -10,8 +10,12 @@ export const Thankyou = ({ onCurrentStep }) => {
   return (
     <>
       <SecondaryHeading question="Thank you for sharing your feedback with us!" />
-      <p className={style.text}>Your €15 Discount Code: PALA15</p>
-      <SubmitButton text="Back" onClickEvent={handleClick} />
+      <p className={style.text}>Your €15 Discount Code: CXD48SS</p>
+      <SubmitButton
+        text="Exsit Survey"
+        onClickEvent={handleClick}
+        url="https://palapets.com/discount/CXD48SS"
+      />
     </>
   );
 };
