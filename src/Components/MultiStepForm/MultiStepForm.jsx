@@ -13,7 +13,7 @@ export const MultiStepForm = () => {
   const [formData, setFormData] = useState({
     primaryReason: "",
     howOften: "",
-    Suggestions: "",
+    suggestions: "",
   });
 
   const updateFormData = (field, value) => {
@@ -50,7 +50,7 @@ export const MultiStepForm = () => {
           {currentStep === 3 && (
             <Suggestions value={formData.suggestions} updateFormData={updateFormData} />
           )}
-          {currentStep === 4 && <Summary />}
+          {currentStep === 4 && <Summary data={formData} />}
         </div>
       </div>
 

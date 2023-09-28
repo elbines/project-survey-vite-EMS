@@ -6,7 +6,7 @@ export const PrimaryReason = ({ updateFormData, value }) => {
 
   return (
     <>
-      <SecondaryHeading question="Please help us understand why you stopped ordering from us. Choose the primary reason:" />
+      <SecondaryHeading question="1. Please help us understand why you stopped ordering from us. Choose the primary reason:" />
 
       <div className={style.input_wrapper}>
         <div className={style.input_field}>
@@ -74,27 +74,3 @@ export const PrimaryReason = ({ updateFormData, value }) => {
     </>
   );
 };
-
-/*
-  export const Album = ({ updateFormData, value }) => {
-  const favoriteAlbum = (e) => updateFormData("favoriteAlbum", e.target.value);
-  return (
-    <div>
-      <label>Favorite Album:</label>
-      <select value={value} onChange={favoriteAlbum}>
-        <option value="">Select an Album</option>
-        <option value="taylor-swift-midnights">Taylor Swift - Midnights</option>
-        <option value="beyonce-renaissance">Beyonce - Renaissance</option>
-        <option value="drake-21-her-loss">Drake & 21 Savage - Her Loss</option>
-        <option value="sza-sos">SZA - SOS</option>
-      </select>
-    </div>
-  );
-};*/
-// 1. Please help us understand why you stopped ordering from us. Choose the primary reason:
-// (Radio Buttons)
-// Prices were too high
-// Quality of products
-// Shipping and delivery issues
-// Found better alternatives
-// Other (Please specify): [Text Input]
