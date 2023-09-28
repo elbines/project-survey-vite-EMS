@@ -32,14 +32,13 @@ export const MultiStepForm = () => {
     if (currentStep > 1) setCurrentStep((c) => c - 1);
     console.log(currentStep);
   };
-  
+
   return (
     <div className={style.form_wrapper}>
-      <Button />
-      <Button />
+
       {/*Mikael edited this to get hero to work*/}
       <Hero step={currentStep} /> {/* Pass currentStep as a prop to Hero <Hero /> */}
-      
+
       <div className={style.form}>
         <h1>Pala PetFoods Customer Insights</h1>
 
@@ -56,13 +55,12 @@ export const MultiStepForm = () => {
           {currentStep === 4 && <Summary data={formData} nextStep={nextStep} />}
           {currentStep === 5 && <Thankyou onCurrentStep={setCurrentStep} />}
         </div>
+        <Button prevStep={prevStep} nextStep={nextStep} />
+
       </div>
 
       <Footer />
-      <button onClick={nextStep} className={style.btn}>
-        Next
-      </button>
-      <button onClick={prevStep}>Previous</button>
+
     </div>
   );
 };
