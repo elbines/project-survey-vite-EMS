@@ -8,6 +8,7 @@ import { Suggestions } from "../Suggestions/Suggestions";
 import { Summary } from "../Summary/Summary";
 
 import style from "./MultiStepForm.module.css";
+import { Thankyou } from "../Thankyou/Thankyou";
 
 export const MultiStepForm = () => {
   const [formData, setFormData] = useState({
@@ -22,8 +23,9 @@ export const MultiStepForm = () => {
   };
 
   const [currentStep, setCurrentStep] = useState(1);
+
   const nextStep = () => {
-    if (currentStep < 3) setCurrentStep((c) => c + 1);
+    if (currentStep < 5) setCurrentStep((c) => c + 1);
     console.log(currentStep);
   };
   const prevStep = () => {
@@ -50,7 +52,8 @@ export const MultiStepForm = () => {
           {currentStep === 3 && (
             <Suggestions value={formData.suggestions} updateFormData={updateFormData} />
           )}
-          {currentStep === 4 && <Summary data={formData} />}
+          {currentStep === 4 && <Summary data={formData} nextStep={nextStep} />}
+          {currentStep === 5 && <Thankyou onCurrentStep={setCurrentStep} />}
         </div>
       </div>
 
@@ -62,9 +65,6 @@ export const MultiStepForm = () => {
     </div>
   );
 };
-
-//   4. Thank you for sharing your feedback with us!
-// Your €15 Discount Code: PALA15
 
 //***************************************************/
 /*

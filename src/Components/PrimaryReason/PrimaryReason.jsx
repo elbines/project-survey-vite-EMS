@@ -1,8 +1,7 @@
 import style from "./PrimaryReason.module.css";
 import { SecondaryHeading } from "../SecondaryHeading/SecondaryHeading";
-export const PrimaryReason = ({ updateFormData, value }) => {
+export const PrimaryReason = ({ updateFormData }) => {
   const firstQuestion = (e) => updateFormData("primaryReason", e.target.value);
-  console.log(value);
 
   return (
     <>
@@ -14,7 +13,7 @@ export const PrimaryReason = ({ updateFormData, value }) => {
             type="radio"
             id="highprice"
             name="primaryReason"
-            value="highprice"
+            value="Prices were too high"
             onChange={firstQuestion}
           />
           <label htmlFor="highprice">Prices were too high</label>
@@ -24,7 +23,7 @@ export const PrimaryReason = ({ updateFormData, value }) => {
             type="radio"
             id="quality"
             name="primaryReason"
-            value="quality"
+            value="Quality of products"
             onChange={firstQuestion}
           />
 
@@ -35,7 +34,7 @@ export const PrimaryReason = ({ updateFormData, value }) => {
             type="radio"
             id="shipping"
             name="primaryReason"
-            value="shipping"
+            value="Shipping and delivery issues"
             onChange={firstQuestion}
           />
           <label htmlFor="shipping">Shipping and delivery issues</label>
@@ -45,7 +44,7 @@ export const PrimaryReason = ({ updateFormData, value }) => {
             type="radio"
             id="betteralternative"
             name="primaryReason"
-            value="betteralternative"
+            value="Found better alternatives"
             onChange={firstQuestion}
           />
           <label htmlFor="betteralternative">Found better alternatives</label>
