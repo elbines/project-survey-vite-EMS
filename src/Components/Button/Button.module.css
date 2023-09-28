@@ -1,9 +1,7 @@
-.navQuestionBtnContainer {}
-
 .previousButton {
     background-color: #d0c4c2;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     box-shadow: none;
     border: none;
@@ -20,8 +18,8 @@
 
 .nextButton {
     background-color: #d0c4c2;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     box-shadow: none;
     border: none;
@@ -33,4 +31,16 @@
 
 .nextButton:hover {
     background-color: #c7bab8;
+}
+
+
+
+@media (min-width: 730px) {
+
+    .nextButton,
+    .previousButton {
+        width: 50px;
+        height: 50px;
+    }
+
 }
