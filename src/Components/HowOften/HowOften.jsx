@@ -9,6 +9,7 @@ export const HowOften = ({ updateFormData, value }) => {
       <select onChange={handleHowOftenChange} value={value} className={style.input_wrapper} >
 
         <h1>Please help us understand why you stopped ordering from us. Choose the primary reason:</h1>
+
         <option value="">Options: </option>
         <option value="Monthly">Monthly</option>
         <option value="Every-second-month">Every second month</option>
