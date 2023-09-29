@@ -2,22 +2,22 @@
   background-image: url("/assets/dog.jpg");
   background-size: cover;
   background-position: 50% 70%;
-  height: 300px; 
-  
+  height: 300px;
+  width: 320px;
 }
 
+@media (min-width: 640px) {
+  .imageContainer {
+    width: 580px;
+  }
+}
 
+/* Sorry I changed here a bit as I fixed footer, 
+I realized that a whole styling was affected. So I had to add width to the images, as it would disappear without it. */
 
 /* .heroImage {
   max-width: 100%; /* Ensure the image does not exceed its container */
- /* max-height: 50%; /* Ensure the image does not exceed its container */
-  /* border-radius: 10px; /* Rounded corners for the image */
-  /* width: fit-content; */ 
+/* max-height: 50%; /* Ensure the image does not exceed its container */
+/* border-radius: 10px; /* Rounded corners for the image */
+/* width: fit-content; */
 /* }   */
-
- 
-  
-  
-
-
-

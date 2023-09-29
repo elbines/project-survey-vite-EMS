@@ -5,7 +5,9 @@ export const SubmitButton = ({ text, onClickEvent, url }) => {
     <>
       {url ? (
         <a href={url} target="_blank" rel="noreferrer">
-          <button className={style.button}>{text}</button>
+          <button className={style.button} type="button">
+            {text}
+          </button>
         </a>
       ) : (
         <button className={style.button} onClick={onClickEvent}>

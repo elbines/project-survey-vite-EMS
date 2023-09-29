@@ -1,7 +1,19 @@
 import style from "./PrimaryReason.module.css";
 import { SecondaryHeading } from "../SecondaryHeading/SecondaryHeading";
+import { useState } from "react";
 export const PrimaryReason = ({ updateFormData }) => {
   const firstQuestion = (e) => updateFormData("primaryReason", e.target.value);
+  const [isOther, setIsOther] = useState(false);
+
+  const handleOther = (e) => {
+    setIsOther(true);
+    firstQuestion(e);
+  };
+
+  const handleChangeEvent = (e) => {
+    setIsOther(false);
+    firstQuestion(e);
+  };
 
   return (
     <>
@@ -14,7 +26,8 @@ export const PrimaryReason = ({ updateFormData }) => {
             id="highprice"
             name="primaryReason"
             value="Prices were too high"
-            onChange={firstQuestion}
+            onChange={handleChangeEvent}
+            required
           />
           <label htmlFor="highprice">Prices were too high</label>
         </div>
@@ -24,7 +37,7 @@ export const PrimaryReason = ({ updateFormData }) => {
             id="quality"
             name="primaryReason"
             value="Quality of products"
-            onChange={firstQuestion}
+            onChange={handleChangeEvent}
           />
 
           <label htmlFor="quality">Quality of products</label>
@@ -35,7 +48,7 @@ export const PrimaryReason = ({ updateFormData }) => {
             id="shipping"
             name="primaryReason"
             value="Shipping and delivery issues"
-            onChange={firstQuestion}
+            onChange={handleChangeEvent}
           />
           <label htmlFor="shipping">Shipping and delivery issues</label>
         </div>
@@ -45,7 +58,7 @@ export const PrimaryReason = ({ updateFormData }) => {
             id="betteralternative"
             name="primaryReason"
             value="Found better alternatives"
-            onChange={firstQuestion}
+            onChange={handleChangeEvent}
           />
           <label htmlFor="betteralternative">Found better alternatives</label>
         </div>
@@ -56,18 +69,20 @@ export const PrimaryReason = ({ updateFormData }) => {
               id="other"
               name="primaryReason"
               value="other"
-              onChange={firstQuestion}
+              onChange={handleOther}
             />
             <label htmlFor="other">Other</label>
           </div>
-          <input
-            type="text"
-            id="other"
-            className={style.text_input}
-            name="primaryReason"
-            onChange={firstQuestion}
-            placeholder="Other..."
-          />
+          {isOther && (
+            <input
+              type="text"
+              id="other"
+              className={style.text_input}
+              name="primaryReason"
+              onChange={firstQuestion}
+              placeholder="Other..."
+            />
+          )}
         </div>
       </div>
     </>

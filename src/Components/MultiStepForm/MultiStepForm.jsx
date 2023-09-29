@@ -14,7 +14,7 @@ export const MultiStepForm = () => {
   const [formData, setFormData] = useState({
     primaryReason: "",
     howOften: "",
-    suggestions: "",
+    thirdQuestion: "",
   });
 
   const updateFormData = (field, value) => {
@@ -33,13 +33,15 @@ export const MultiStepForm = () => {
     console.log(currentStep);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={style.form_wrapper}>
-
       {/*Mikael edited this to get hero to work*/}
       <Hero step={currentStep} /> {/* Pass currentStep as a prop to Hero <Hero /> */}
-
-      <div className={style.form}>
+      <form className={style.form} onSubmit={handleSubmit}>
         <h1>Pala PetFoods Customer Insights</h1>
 
         <div className={style.inner_form}>
@@ -50,17 +52,14 @@ export const MultiStepForm = () => {
             <HowOften value={formData.howOften} updateFormData={updateFormData} />
           )}
           {currentStep === 3 && (
-            <Suggestions value={formData.suggestions} updateFormData={updateFormData} />
+            <Suggestions value={formData.thirdQuestion} updateFormData={updateFormData} />
           )}
           {currentStep === 4 && <Summary data={formData} nextStep={nextStep} />}
           {currentStep === 5 && <Thankyou onCurrentStep={setCurrentStep} />}
         </div>
         <Button prevStep={prevStep} nextStep={nextStep} />
-
-      </div>
-
+      </form>
       <Footer />
-
     </div>
   );
 };
