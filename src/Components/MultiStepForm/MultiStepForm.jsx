@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../Button/Button";
 import { Footer } from "../Footer/Footer";
 import { Hero } from "../Hero/Hero";
@@ -17,6 +17,11 @@ export const MultiStepForm = () => {
     thirdQuestion: "",
   });
 
+  const [error, setError] = useState({
+    message: "",
+    isFailed: false,
+  });
+
   const updateFormData = (field, value) => {
     setFormData((previous) => ({ ...previous, [field]: value }));
     console.log(formData);
@@ -25,8 +30,7 @@ export const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {
-    if (currentStep < 5) setCurrentStep((c) => c + 1);
-    console.log(currentStep);
+    !error.isFailed && currentStep < 5(setCurrentStep((c) => c + 1));
   };
   const prevStep = () => {
     if (currentStep > 1) setCurrentStep((c) => c - 1);
@@ -36,6 +40,21 @@ export const MultiStepForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+
+  useEffect(() => {
+    if (currentStep === 1)
+      formData.primaryReason === ""
+        ? setError((prev) => ({ ...prev, isFailed: true }))
+        : setError((prev) => ({ ...prev, isFailed: false }));
+    if (currentStep === 2)
+      formData.howOften === ""
+        ? setError((prev) => ({ ...prev, isFailed: true }))
+        : setError((prev) => ({ ...prev, isFailed: false }));
+    if (currentStep === 3)
+      formData.thirdQuestion === ""
+        ? setError((prev) => ({ ...prev, isFailed: true }))
+        : setError((prev) => ({ ...prev, isFailed: false }));
+  }, [currentStep, formData]);
 
   return (
     <div className={style.form_wrapper}>
@@ -57,7 +76,12 @@ export const MultiStepForm = () => {
           {currentStep === 4 && <Summary data={formData} nextStep={nextStep} />}
           {currentStep === 5 && <Thankyou onCurrentStep={setCurrentStep} />}
 
-          <Button prevStep={prevStep} nextStep={nextStep} currentStep={currentStep} />
+          <Button
+            prevStep={prevStep}
+            nextStep={nextStep}
+            currentStep={currentStep}
+            isFailed={error.isFailed}
+          />
         </div>
       </form>
       <Footer />

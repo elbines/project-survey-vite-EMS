@@ -1,11 +1,12 @@
 import style from "./Suggestions.module.css";
+import { SecondaryHeading } from "../SecondaryHeading/SecondaryHeading";
 
-export const Suggestions = ({ updateFormData }) => {
+export const Suggestions = ({ updateFormData, value }) => {
   const thirdQuestion = (e) => updateFormData("thirdQuestion", e.target.value);
 
   return (
     <div>
-      <h2>3. What suggestions do you have to improve your shopping experience?</h2>
+      <SecondaryHeading question="3. What suggestions do you have to improve your shopping experience?" />
       <div className={style.input_wrapper}>
         <textarea
           id="input"
@@ -14,6 +15,7 @@ export const Suggestions = ({ updateFormData }) => {
           rows="3"
           onChange={thirdQuestion}
           required
+          value={value}
         ></textarea>
       </div>
     </div>
