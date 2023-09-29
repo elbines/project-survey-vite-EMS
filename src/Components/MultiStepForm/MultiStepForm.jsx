@@ -41,19 +41,20 @@ export const MultiStepForm = () => {
     event.preventDefault();
   };
 
+  // Erro handling this is when a user doesn't fill, then a next button doesn't work.
   useEffect(() => {
     if (currentStep === 1)
       formData.primaryReason === ""
-        ? setError((prev) => ({ ...prev, isFailed: true }))
-        : setError((prev) => ({ ...prev, isFailed: false }));
+        ? setError(() => ({ message: "Please choose one option ⭐️", isFailed: true }))
+        : setError(() => ({ message: "", isFailed: false }));
     if (currentStep === 2)
       formData.howOften === ""
-        ? setError((prev) => ({ ...prev, isFailed: true }))
-        : setError((prev) => ({ ...prev, isFailed: false }));
+        ? setError(() => ({ message: "Please select one 🦮", isFailed: true }))
+        : setError(() => ({ message: "", isFailed: false }));
     if (currentStep === 3)
       formData.thirdQuestion === ""
-        ? setError((prev) => ({ ...prev, isFailed: true }))
-        : setError((prev) => ({ ...prev, isFailed: false }));
+        ? setError(() => ({ message: "Please write your suggestions 🤲", isFailed: true }))
+        : setError(() => ({ message: "", isFailed: false }));
   }, [currentStep, formData]);
 
   return (
@@ -65,13 +66,21 @@ export const MultiStepForm = () => {
 
         <div className={style.inner_form}>
           {currentStep === 1 && (
-            <PrimaryReason value={formData.primaryReason} updateFormData={updateFormData} />
+            <PrimaryReason
+              value={formData.primaryReason}
+              updateFormData={updateFormData}
+              error={error}
+            />
           )}
           {currentStep === 2 && (
-            <HowOften value={formData.howOften} updateFormData={updateFormData} />
+            <HowOften value={formData.howOften} updateFormData={updateFormData} error={error} />
           )}
           {currentStep === 3 && (
-            <Suggestions value={formData.thirdQuestion} updateFormData={updateFormData} />
+            <Suggestions
+              value={formData.thirdQuestion}
+              updateFormData={updateFormData}
+              error={error}
+            />
           )}
           {currentStep === 4 && <Summary data={formData} nextStep={nextStep} />}
           {currentStep === 5 && <Thankyou onCurrentStep={setCurrentStep} />}
