@@ -58,42 +58,44 @@ export const MultiStepForm = () => {
   }, [currentStep, formData]);
 
   return (
-    <div className={style.form_wrapper}>
-      <img src="/assets/logo.png" className={style.logo} />
-      {/*Mikael edited this to get hero to work*/}
-      <Hero step={currentStep} /> {/* Pass currentStep as a prop to Hero <Hero /> */}
-      <form className={style.form} onSubmit={handleSubmit}>
-        <h1>Pala PetFoods Customer Insights</h1>
+    <div className={style.wrapper}>
+      <div className={style.form_wrapper}>
+        <img src="/assets/logo.png" className={style.logo} />
+        {/*Mikael edited this to get hero to work*/}
+        <Hero step={currentStep} /> {/* Pass currentStep as a prop to Hero <Hero /> */}
+        <form className={style.form} onSubmit={handleSubmit}>
+          <h1>Pala PetFoods Customer Insights</h1>
 
-        <div className={style.inner_form}>
-          {currentStep === 1 && (
-            <PrimaryReason
-              value={formData.primaryReason}
-              updateFormData={updateFormData}
-              error={error}
-            />
-          )}
-          {currentStep === 2 && (
-            <HowOften value={formData.howOften} updateFormData={updateFormData} error={error} />
-          )}
-          {currentStep === 3 && (
-            <Suggestions
-              value={formData.thirdQuestion}
-              updateFormData={updateFormData}
-              error={error}
-            />
-          )}
-          {currentStep === 4 && <Summary data={formData} nextStep={nextStep} />}
-          {currentStep === 5 && <Thankyou onCurrentStep={setCurrentStep} />}
+          <div className={style.inner_form}>
+            {currentStep === 1 && (
+              <PrimaryReason
+                value={formData.primaryReason}
+                updateFormData={updateFormData}
+                error={error}
+              />
+            )}
+            {currentStep === 2 && (
+              <HowOften value={formData.howOften} updateFormData={updateFormData} error={error} />
+            )}
+            {currentStep === 3 && (
+              <Suggestions
+                value={formData.thirdQuestion}
+                updateFormData={updateFormData}
+                error={error}
+              />
+            )}
+            {currentStep === 4 && <Summary data={formData} nextStep={nextStep} />}
+            {currentStep === 5 && <Thankyou onCurrentStep={setCurrentStep} />}
 
-          <Button
-            prevStep={prevStep}
-            nextStep={nextStep}
-            currentStep={currentStep}
-            isFailed={error.isFailed}
-          />
-        </div>
-      </form>
+            <Button
+              prevStep={prevStep}
+              nextStep={nextStep}
+              currentStep={currentStep}
+              isFailed={error.isFailed}
+            />
+          </div>
+        </form>
+      </div>
       <Footer />
     </div>
   );

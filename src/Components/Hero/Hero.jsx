@@ -1,28 +1,25 @@
 import style from "./Hero.module.css";
-
-const Hero = ({ step }) => { // Destructure "step" from props
+const Hero = ({ step }) => {
+  // Destructure "step" from props
   // Get the current step from the MultiStepForm
   const currentStage = step;
   console.log(currentStage);
-
-  
-  let backgroundImage;
-
+  let backgroundClass;
   if (step === 1) {
-    backgroundImage = "/assets/dog.jpg";
+    backgroundClass = style.step1img;
   } else if (step === 2) {
-    backgroundImage = "/assets/dogs.jpg";
+    backgroundClass = style.step2img;
   } else if (step === 3) {
-    backgroundImage = "/assets/dog_snow.jpg";
+    backgroundClass = style.step3img;
+  } else if (step === 4) {
+    backgroundClass = style.step4img;
   } else {
-    backgroundImage = "/assets/dog_snow.jpg";
+    backgroundClass = style.step5img;
   }
-
   return (
-    <div className={style.imageContainer}>
-      {/* <img src={backgroundImage} alt="dog" className={style.heroImage} />  /*/}
+    <div className={`${backgroundClass}  ${style.imageContainer}`}>
+      {/* Do i need style. here? didnt work with it. but why? when and why do i need style.?  /*/}
     </div>
   );
 };
-
 export { Hero };
