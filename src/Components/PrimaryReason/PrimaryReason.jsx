@@ -1,7 +1,9 @@
 import style from "./PrimaryReason.module.css";
 import { SecondaryHeading } from "../SecondaryHeading/SecondaryHeading";
 import { useState } from "react";
-export const PrimaryReason = ({ updateFormData }) => {
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
+
+export const PrimaryReason = ({ updateFormData, value, error }) => {
   const firstQuestion = (e) => updateFormData("primaryReason", e.target.value);
   const [isOther, setIsOther] = useState(false);
 
@@ -18,6 +20,7 @@ export const PrimaryReason = ({ updateFormData }) => {
   return (
     <>
       <SecondaryHeading question="1. Please help us understand why you stopped ordering from us. Choose the primary reason:" />
+      <ErrorMessage error={error} />
 
       <div className={style.input_wrapper}>
         <div className={style.input_field}>
@@ -27,7 +30,7 @@ export const PrimaryReason = ({ updateFormData }) => {
             name="primaryReason"
             value="Prices were too high"
             onChange={handleChangeEvent}
-            required
+            checked={value === "Prices were too high"}
           />
           <label htmlFor="highprice">Prices were too high</label>
         </div>
@@ -37,6 +40,7 @@ export const PrimaryReason = ({ updateFormData }) => {
             id="quality"
             name="primaryReason"
             value="Quality of products"
+            checked={value === "Quality of products"}
             onChange={handleChangeEvent}
           />
 
@@ -48,6 +52,7 @@ export const PrimaryReason = ({ updateFormData }) => {
             id="shipping"
             name="primaryReason"
             value="Shipping and delivery issues"
+            checked={value === "Shipping and delivery issues"}
             onChange={handleChangeEvent}
           />
           <label htmlFor="shipping">Shipping and delivery issues</label>
@@ -58,6 +63,7 @@ export const PrimaryReason = ({ updateFormData }) => {
             id="betteralternative"
             name="primaryReason"
             value="Found better alternatives"
+            checked={value === "Found better alternatives"}
             onChange={handleChangeEvent}
           />
           <label htmlFor="betteralternative">Found better alternatives</label>
@@ -68,7 +74,8 @@ export const PrimaryReason = ({ updateFormData }) => {
               type="radio"
               id="other"
               name="primaryReason"
-              value="other"
+              value="Other"
+              checked={value === "Other"}
               onChange={handleOther}
             />
             <label htmlFor="other">Other</label>
