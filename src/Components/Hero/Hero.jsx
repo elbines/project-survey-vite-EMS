@@ -18,7 +18,6 @@ const Hero = ({ step }) => {
   }
   return (
     <div className={`${backgroundClass}  ${style.imageContainer}`}>
-      {/* Do i need style. here? didnt work with it. but why? when and why do i need style.?  /*/}
     </div>
   );
 };

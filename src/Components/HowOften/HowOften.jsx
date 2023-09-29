@@ -7,7 +7,7 @@ export const HowOften = ({ updateFormData, value, error }) => {
 
   return (
     <div>
-      <SecondaryHeading question="2. How frequently did you make an order? Select an option below:" />
+      <SecondaryHeading question="2. How frequently did you make an order?" />
       <ErrorMessage error={error} />
 
       <select onChange={handleHowOftenChange} value={value} className={style.input_wrapper}>

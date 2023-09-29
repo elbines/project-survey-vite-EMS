@@ -2,7 +2,8 @@
 
 .footer {
   height: 10vh;
-  width: 100%; /* Set the width to 100% to stretch across the full screen */
+  width: 100%;
+  /* Set the width to 100% to stretch across the full screen */
   display: flex;
   align-items: center;
   justify-content: center;
