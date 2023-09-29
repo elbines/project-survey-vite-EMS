@@ -10,6 +10,10 @@ h5 {
   margin: 0;
 }
 
+p {
+  margin: 8px 0;
+}
+
 @media (min-width: 640px) {
   .inner_box {
     padding: 20px 0;
@@ -18,5 +22,9 @@ h5 {
 
   h5 {
     font-size: 20px;
+  }
+
+  p {
+    margin: 10px 0;
   }
 }

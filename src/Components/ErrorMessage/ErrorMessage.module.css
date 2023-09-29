@@ -2,11 +2,14 @@
   font-size: 14px;
   color: #b91c1c;
   text-align: start;
-  margin-left: 30px;
+  margin: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 640px) {
   .text {
-    margin-left: 100px;
+    margin-left: 0;
+    text-align: center;
   }
 }

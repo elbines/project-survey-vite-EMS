@@ -1,10 +1,4 @@
-import {MultiStepForm} from "./Components/MultiStepForm/MultiStepForm"
+import { MultiStepForm } from "./Components/MultiStepForm/MultiStepForm";
 export const App = () => {
-  return <MultiStepForm/>;
+  return <MultiStepForm />;
 };
-
-/*
-Elba:HowOften,Button
-Mikael:Suggestions,Footer,Hero
-Sakura: PrimaryReason, Summary,
-*/ 
