@@ -1,5 +1,5 @@
 .form_wrapper {
-  margin-top: 50px;
+  margin-top: 20px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -39,6 +39,11 @@ h1 {
   border-radius: 5px;
 }
 
+.logo {
+  width: 130px;
+  margin-bottom: 20px;
+}
+
 @media (min-width: 640px) {
   .form {
     width: 500px;
@@ -52,5 +57,9 @@ h1 {
 
   .inner_form {
     padding: 30px 20px;
+  }
+
+  .logo {
+    width: 150px;
   }
 }
