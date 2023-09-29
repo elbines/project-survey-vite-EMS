@@ -59,6 +59,7 @@ export const MultiStepForm = () => {
 
   return (
     <div className={style.form_wrapper}>
+      <img src="/assets/logo.png" className={style.logo} />
       {/*Mikael edited this to get hero to work*/}
       <Hero step={currentStep} /> {/* Pass currentStep as a prop to Hero <Hero /> */}
       <form className={style.form} onSubmit={handleSubmit}>

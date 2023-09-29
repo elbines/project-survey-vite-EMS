@@ -1,3 +1,12 @@
 .text {
   font-size: 14px;
+  color: #b91c1c;
+  text-align: start;
+  margin-left: 30px;
+}
+
+@media (min-width: 640px) {
+  .text {
+    margin-left: 100px;
+  }
 }
