@@ -59,14 +59,7 @@ export const MultiStepForm = () => {
 
           <Button prevStep={prevStep} nextStep={nextStep} currentStep={currentStep} />
         </div>
-
       </form>
-
-
-
-      </div>
-
-
       <Footer />
     </div>
   );
