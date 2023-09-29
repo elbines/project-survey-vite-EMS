@@ -2,7 +2,7 @@ import style from "./Suggestions.module.css";
 
 export const Suggestions = ({ updateFormData }) => {
   const thirdQuestion = (e) => updateFormData("thirdQuestion", e.target.value);
-  
+
   return (
     <div>
       <h2>3. What suggestions do you have to improve your shopping experience?</h2>
@@ -13,6 +13,7 @@ export const Suggestions = ({ updateFormData }) => {
           placeholder="Please type here"
           rows="3"
           onChange={thirdQuestion}
+          required
         ></textarea>
       </div>
     </div>

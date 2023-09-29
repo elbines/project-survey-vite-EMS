@@ -32,9 +32,18 @@ code {
 
 body {
   background-color: var(--background-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   font-family: var(--primary-font);
   color: #444;
+  margin: 0;
+}
+
+#root {
+  width: 100vw;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: #d0c4c2 solid 5px;
 }
