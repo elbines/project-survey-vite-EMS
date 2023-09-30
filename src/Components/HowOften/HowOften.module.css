@@ -6,6 +6,9 @@
     gap: 20px;
     align-items: start;
     margin: 0 auto;
+    padding: 10px 20px;
+    margin-top: 40px;
+    border-color: #c7bab8;
 }
 
 @media (min-width: 640px) {

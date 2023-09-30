@@ -5,6 +5,7 @@ import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
 export const HowOften = ({ updateFormData, value, error }) => {
   const handleHowOftenChange = (e) => updateFormData("howOften", e.target.value);
 
+
   return (
     <div>
       <SecondaryHeading question="2. How frequently did you make an order?" />

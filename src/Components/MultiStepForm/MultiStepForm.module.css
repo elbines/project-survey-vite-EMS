@@ -67,4 +67,8 @@ h1 {
   .logo {
     width: 150px;
   }
+
+  .wrapper {
+    padding-top: 20px;
+  }
 }
