@@ -69,7 +69,7 @@ export const PrimaryReason = ({ updateFormData, value, error }) => {
           <label htmlFor="betteralternative">Found better alternatives</label>
         </div>
         <div className={`${style.input_field} ${style.input_other}`}>
-          <div>
+          <div className={style.other_wrapper}>
             <input
               type="radio"
               id="other"
