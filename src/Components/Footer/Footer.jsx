@@ -2,8 +2,11 @@ import style from "./Footer.module.css";
 
 export const Footer = () => {
   return (
-    <div className={style.footer}>
-      <div className={style.footerText}>© Customer Survey</div>
-    </div>
+    <footer className={style.footer}>
+      <div className={style.footerText}>
+        <p className={style.names}>Created by Elba Cacan, Mikael Öling, and Sakura Tanaka</p>
+        <p>© Customer Survey</p>
+      </div>
+    </footer>
   );
 };
