@@ -15,16 +15,21 @@
 }
 
 .text_input {
-  margin: 0 auto;
+  margin: 10px auto 0;
   font-size: 14px;
   border: none;
   border-radius: 3px;
   padding: 1px 3px;
   display: flex;
+  resize: none;
+  width: 230px;
+  height: 150px;
 }
 
 @media (min-width: 640px) {
   .text_input {
     font-size: 18px;
+    width: 260px;
+    height: 180px;
   }
 }

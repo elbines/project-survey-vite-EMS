@@ -22,6 +22,3 @@ export const Suggestions = ({ updateFormData, value, error }) => {
     </div>
   );
 };
-
-//   3. What suggestions do you have to improve your shopping experience?
-// (Text Input)

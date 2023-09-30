@@ -34,6 +34,7 @@ h1 {
 }
 
 .inner_form {
+  height: 290px;
   position: relative;
   margin: 20px 0;
   background-color: rgba(208, 196, 194, 0.5);

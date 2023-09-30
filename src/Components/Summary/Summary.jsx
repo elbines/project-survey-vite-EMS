@@ -1,5 +1,5 @@
 import { SecondaryHeading } from "../SecondaryHeading/SecondaryHeading";
-import { SubmitButton } from "../../SubmitButton/SubmitButton";
+import { SubmitButton } from "../SubmitButton/SubmitButton";
 import style from "./Summary.module.css";
 
 export const Summary = ({ data, nextStep }) => {
