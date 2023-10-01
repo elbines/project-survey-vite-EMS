@@ -31,7 +31,7 @@ Given the varied commitments each of us had this week, the amount of tasks diffe
 ### View it live
 
 
-
+https://pala-customer-survey.netlify.app/ 
 
 
 
